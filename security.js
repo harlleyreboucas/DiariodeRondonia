@@ -1,3 +1,3 @@
 <script language= "JavaScript">
-// location.href="https://www.uolhost.com.br/"
+location.href="https://www.uolhost.com.br/"
 </script>

@@ -1,3 +1,3 @@
 function redirectTime(){
-    window.location = "https://wwww.uolhost.com.br"
+    window.location = "https://uolhost.uol.com.br/#rmcl"
  }

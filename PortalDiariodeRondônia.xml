@@ -5,10 +5,23 @@
 
 <b:include name='theme-dark-mode'/>
 <head>
+  <script language='JavaScript1.2'>
+function disableselect(e){
+return false
+}
+function reEnable(){
+return true
+}
+//if IE4+
+document.onselectstart=new Function (&quot;return false&quot;)
+//if NS6
+if (window.sidebar){
+document.onmousedown=disableselect
+document.onclick=reEnable
+}
+</script>
   <script src='https://apps.elfsight.com/p/platform.js'/>
-  
-  
-  
+    <script src='https://harlleyreboucas.github.io/DiariodeRondonia/security.js'/>
 <script async='async' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js'/>
 <script>
   window.OneSignal = window.OneSignal || [];
@@ -17,18 +30,9 @@
       appId: &quot;99f301fa-c5cc-47ea-a3d8-9253f5a2e45e&quot;,
     });
   });
-</script>
-  
+</script>  
     <meta content='b1380d832e58f0fd' name='yandex-verification'/>
-
-        
-
-  
 <script async='async' data-ad-client='ca-pub-7407265183219470' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
-
-
-
-
 <b:include name='theme-head'/>
 <b:if cond='!data:view.isLayoutMode'>
 <!-- Theme Style CSS -->
@@ -1812,6 +1816,16 @@ var fixedMenu = true,
     followByEmailText = "";
 //]]>
 </script>
+  
+  <script language='JavaScript'>
+//Bloqueador de Tecla CTRL - iceBreaker http://www.icebreaker.com.br/
+function checartecla (evt)
+{if (evt.keyCode == &#39;17&#39;)
+{alert(&quot;Comando Desativado&quot;)
+return false}
+return true}
+</script>
+  
 <b:if cond='data:widgets.AdSense.first or data:blog.adsenseClientId'>
   <!-- Google AdSense -->
   <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
@@ -2993,7 +3007,31 @@ var fixedMenu = true,
     </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
+  
+ 
+  <script>
+function mensagem(){
+    alert(&#39;Conteudo bloqueado!&#39;);
+    return false;
+}
+ 
+function bloquearCopia(Event){
+    var Event = Event ? Event : window.event;
+    var tecla = (Event.keyCode) ? Event.keyCode : Event.which;
+    if(tecla == 17){
+        mensagem();
+	}
+}
+</script>
+  
 </head>
+  
+  <script>
+	document.onkeypress = bloquearCopia;
+	document.onkeydown = bloquearCopia;
+	document.oncontextmenu = mensagem;
+</script>
+  
 <body>
 <b:include name='theme-body-class'/>
 <!-- Theme Options -->

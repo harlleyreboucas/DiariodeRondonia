@@ -1,1 +1,3 @@
-location.href="https://www.uolhost.com.br/"
+function redirectTime(){
+    window.location = "https://wwww.uolhost.com.br"
+ }
